@@ -11,6 +11,7 @@ import RetirementCal from "./pages/RetirementCal";
 import AssetAllocationCal from "./pages/AssetAllocationCal";
 import AdvancedGoalCal from "./pages/AdvancedGoalCal";
 import PPFCalculator from "./pages/PPFCalculator";
+import GstCalculator from "./pages/GstCalculator";
 
 const appRouter = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/ppf-calculator",
     element: <PPFCalculator />,
+  },
+  {
+    path: "/gst-calculator",
+    element: <GstCalculator />,
   },
 ]);
 
