@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
@@ -9,11 +9,10 @@ export default defineConfig({
       '/api/proxy': {
         target: 'https://www.alphavantage.co',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/proxy/, '')
+        rewrite: (path) => path.replace(/^\/api\/proxy/, ''),
+        secure: false
       }
     }
   },
-  define: {
-    'process.env': process.env // Forward all environment variables
-  }
-})
+  envPrefix: 'VITE_', 
+});
