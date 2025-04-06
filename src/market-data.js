@@ -1,5 +1,5 @@
 const CONFIG = {
-  API_KEY: 'QG1YH3ZI7S4AJTRH', 
+  API_KEY: import.meta.env.VITE_ALPHA_VANTAGE_API_KEY, 
   INDIAN_EXCHANGE: 'NSE',
   FOREIGN_EXCHANGE: 'NYSE',
   CURRENCY: {
@@ -7,7 +7,6 @@ const CONFIG = {
     FOREIGN: '$'
   }
 };
-
 const STOCK_DATABASE = {
   INDIAN: {
     'reliance': 'RELIANCE.BSE',
@@ -254,5 +253,4 @@ async function processQuery(query) {
   return formatData(stockData, ticker, market);
 }
 
-// Export as ES modules
 export { detectTicker, getStockData, formatData, processQuery };
